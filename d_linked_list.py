@@ -202,6 +202,14 @@ class DLinkedList:
         if temp_node is not None:
             self.head = temp_node.prev
 
+    def search(self, item) -> bool:
+        for node in self:
+            if node.data == item:
+                print("Element found")
+                return True
+        print("Element not found")
+        return False
+
 if __name__ == "__main__":
     dl = DLinkedList()
     dl.insert_at_end(1)
