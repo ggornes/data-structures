@@ -142,19 +142,19 @@ class DLinkedList:
 
         # if not empty and not the first element, traverse
         current_node = self.head
-        while current_node is not None:
+        while current_node.next is not None:
             if current_node.data == element:
                 break
             current_node = current_node.next
 
-            if current_node.next is not None:
-                current_node.prev.next = current_node.next
-                current_node.next.prev = current_node.prev
+        if current_node.next is not None:
+            current_node.prev.next = current_node.next
+            current_node.next.prev = current_node.prev
+        else:
+            if current_node.data == element:
+                current_node.prev.next = None
             else:
-                if current_node.data == element:
-                    current_node.prev.next = None
-                else:
-                    print("Element not found")
+                print("Element not found")
 
     def __iter__(self):
         current_node = self.head
