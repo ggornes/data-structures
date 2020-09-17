@@ -1,4 +1,3 @@
-from linked_lists import SLinkedList
 from d_linked_list import DLinkedList
 from card import Card
 
@@ -7,53 +6,31 @@ players = []
 # def deal_cards(deck, players):
 
 
-
-
-
-
 if __name__ =='__main__':
-    card_deck = SLinkedList()
 
-    card_deck2 = DLinkedList()
-
-    p1_hand = DLinkedList()
-    p2_hand = DLinkedList()
+    card_deck = DLinkedList()
 
     valid_rank = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
+    # valid_rank = ['A']
     # valid_suit = ['D', 'C', 'H', 'S']
     valid_suit = ['D']
 
+
+
+    """ 1. Add node to the list, in this case, all cards """
     for s in valid_suit:
         for r in valid_rank:
-            card_deck.add(Card(r, s))
-
-            card_deck2.add(Card(r, s))
-
-    """ print all deck """
-    card_deck.display()
-
-    """ pretty print """
-    # card_deck.pdisplay()
-
-    """ print by groups """
-    card_deck.gdisplay()
-
-    print("Card deck size: ")
-    print(card_deck.size())
+            card_deck.insert_at_start(Card(r, s))
 
 
-    selected_card = Card('8', 'D')
-    selected_card.pprint()
+    """ 2. Delete a node (a card) from the list (deck) """
+    selected_card = Card('A', 'D')
 
-    card_deck.search(selected_card)
+    card_deck.delete_element(selected_card)
 
-    card_deck.delete(selected_card)
+    """ 3. Display all data in the list backwards """
+    # card_deck.reverse_list()
+    for c in card_deck:
+        c.data.pprint()
 
-    card_deck.gdisplay()
-
-
-
-
-    # card_deck2.display()
-
-
+    """ 4. Find a node (card) on the list (deck) """
