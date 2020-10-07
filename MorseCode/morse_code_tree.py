@@ -52,11 +52,9 @@ class Morse_Code_Tree():
 if __name__ == "__main__":
     tree = Morse_Code_Tree()
     msg = ".... . .-.. .-.. ---  - .... .. ...  .. ...  .-  ... . -.-. .-. . -  -- . ... ... .- --. ."
-    # try:
-    #     result = tree.translate_message(msg)
-    #     print(result)
-    # except:
-    #     print("Error")
+    try:
+        result = tree.translate_message(msg)
+        print(result)
+    except:
+        print("Error: not a morse code provided")
 
-    result = tree.translate_message(msg)
-    print(result)
